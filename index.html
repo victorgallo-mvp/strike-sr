@@ -85,6 +85,7 @@ body {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.announce-track-dup { display: none; }
 @media (max-width: 640px) {
   .announce { padding: 11px 0; }
   .announce-track {
@@ -92,7 +93,9 @@ body {
     gap: 32px;
     animation: ticker 16s linear infinite;
     width: max-content;
+    justify-content: flex-start;
   }
+  .announce-track-dup { display: flex; gap: 32px; flex-shrink: 0; }
   .announce-track:hover { animation-play-state: paused; }
 }
 
@@ -117,11 +120,12 @@ nav {
   text-decoration: none;
 }
 .nav-logo-img {
-  height: 36px;
+  height: 32px;
   width: auto;
   display: block;
   border-radius: 4px;
   object-fit: contain;
+  max-width: 120px;
 }
 .nav-cta {
   background: var(--red);
@@ -1128,7 +1132,7 @@ footer {
 .prova-lbl { font-size: 12px; color: var(--ink-3); letter-spacing: 0.05em; }
 .prova-prints {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 32px;
   align-items: start;
@@ -1597,7 +1601,7 @@ footer {
 
 <!-- ANNOUNCE -->
 <div class="announce">
-  <div class="announce-track" aria-hidden="false">
+  <div class="announce-track" aria-hidden="false"><div class="announce-track-main" style="display:contents">
     <div class="announce-item">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="10" width="14" height="5" rx="1"/><path d="M4 10V6a4 4 0 018 0v4"/><path d="M1 13h14"/></svg>
       <strong>Frete grátis</strong> para todo o Brasil
@@ -1617,7 +1621,7 @@ footer {
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 5v3l2 2"/></svg>
       Entrega <strong>rápida</strong>
     </div>
-    <div class="announce-sep"></div>
+    <div class="announce-sep"></d</div><div class="announce-track-dup" aria-hidden="true">iv>
     <div class="announce-item">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="10" width="14" height="5" rx="1"/><path d="M4 10V6a4 4 0 018 0v4"/><path d="M1 13h14"/></svg>
       <strong>Frete grátis</strong> para todo o Brasil
@@ -1637,14 +1641,14 @@ footer {
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 5v3l2 2"/></svg>
       Entrega <strong>rápida</strong>
     </div>
-    <div class="announce-sep"></div>
-  </div>
+    <div class="announce-sep"></div></div>
+</div>
 </div>
 
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="Criativos%20Arthur%20/IMG_6458.jpg" alt="Strike Nutrition" class="nav-logo-img">
+    <img src="IMG_6458.jpg" alt="Strike Nutrition" class="nav-logo-img">
   </a>
   <a href="#kits" class="nav-cta">Ver kits</a>
 </nav>
@@ -1806,7 +1810,7 @@ footer {
         <div class="c-track" data-current="0">
         <div class="antes-card reveal">
         <div class="antes-full-img">
-          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-18-30%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="antes-depois/PHOTO-2026-04-30-20-18-30%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -1816,7 +1820,7 @@ footer {
       </div>
         <div class="antes-card reveal reveal-d1">
         <div class="antes-full-img">
-          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-18-59.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="antes-depois/PHOTO-2026-04-30-20-18-59.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -1826,7 +1830,7 @@ footer {
       </div>
         <div class="antes-card reveal reveal-d2">
         <div class="antes-full-img">
-          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-19-21%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="antes-depois/PHOTO-2026-04-30-20-19-21%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -1856,7 +1860,7 @@ footer {
     <div class="video-grid">
       <div class="video-card reveal">
         <div class="video-thumb">
-          <video id="vid1" src="Bruna%20Seca%20Rapido%20/IMG_2906.mov" playsinline preload="metadata"></video>
+          <video id="vid1" src="videos/IMG_2906.mov" playsinline preload="metadata"></video>
           <div class="video-overlay" onclick="playVid('vid1',this)">
             <div class="play-btn">
               <svg viewBox="0 0 20 20"><path d="M7 4l10 6-10 6V4z"/></svg>
@@ -1877,7 +1881,7 @@ footer {
       </div>
       <div class="video-card reveal reveal-d2">
         <div class="video-thumb">
-          <video id="vid2" src="Bruna%20Seca%20Rapido%20/IMG_2904.mov" playsinline preload="metadata"></video>
+          <video id="vid2" src="videos/IMG_2904.mov" playsinline preload="metadata"></video>
           <div class="video-overlay" onclick="playVid('vid2',this)">
             <div class="play-btn">
               <svg viewBox="0 0 20 20"><path d="M7 4l10 6-10 6V4z"/></svg>
@@ -2158,6 +2162,18 @@ footer {
         <div class="grev-text">"Chegou rápido, atendimento ótimo. Na segunda semana já senti diferença na disposição e no inchaço."</div>
         <div class="grev-source"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Avaliação no Google</div>
       </div>
+      <div class="prova-print reveal">
+        <div class="grev-header">
+          <div class="grev-avatar" style="background:#7c3aed">M</div>
+          <div class="grev-info">
+            <div class="grev-name">Marcos T.</div>
+            <div class="grev-date">há 5 dias</div>
+          </div>
+        </div>
+        <div class="grev-stars"><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg></div>
+        <div class="grev-text">"Comprei pra minha esposa e ela amou. Em 3 semanas o resultado já apareceu. Entrega super rápida, produto de qualidade."</div>
+        <div class="grev-source"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Avaliação no Google</div>
+      </div>
     </div>
   </div>
 </section>
@@ -2176,7 +2192,7 @@ footer {
         <div class="c-track" data-current="0">
         <div class="antes-card">
         <div class="antes-full-img">
-          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-19-46.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="antes-depois/PHOTO-2026-04-30-20-19-46.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -2186,7 +2202,7 @@ footer {
       </div>
         <div class="antes-card">
         <div class="antes-full-img">
-          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-25-21.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="antes-depois/PHOTO-2026-04-30-20-25-21.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -2196,7 +2212,7 @@ footer {
       </div>
         <div class="antes-card">
         <div class="antes-full-img">
-          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-25-39.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="antes-depois/PHOTO-2026-04-30-20-25-39.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -2482,7 +2498,7 @@ footer {
 <footer>
   <div class="footer-inner">
     <div>
-      <img src="Criativos%20Arthur%20/IMG_6458.jpg" alt="Strike Nutrition" class="footer-logo-img">
+      <img src="IMG_6458.jpg" alt="Strike Nutrition" class="footer-logo-img">
       <p class="footer-desc">Suplementos de alta performance para quem busca evolução real. Qualidade certificada, resultados comprovados.</p>
       <p class="footer-legal">
         CNPJ: 55.319.734/0024-9 &nbsp;&middot;&nbsp; Todos os direitos reservados &copy; 2026 Strike Nutrition<br>
