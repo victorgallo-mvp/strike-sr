@@ -537,26 +537,27 @@ nav {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: rgba(0,0,0,0.15);
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.0) 100%);
   transition: background 0.2s;
 }
-.video-overlay:hover { background: rgba(0,0,0,0.05); }
+.video-overlay:hover { background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.0) 100%); }
 .play-btn {
-  width: 52px;
-  height: 52px;
-  background: var(--white);
+  width: 68px;
+  height: 68px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-lg);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  transition: transform 0.2s, background 0.2s;
+  border: 2px solid rgba(255,255,255,0.6);
 }
-.video-overlay:hover .play-btn { transform: scale(1.08); }
-.play-btn svg { width: 20px; height: 20px; fill: var(--ink); margin-left: 2px; }
-.video-body { padding: 16px 18px; }
-.video-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
-.video-quote { font-size: 13px; color: var(--ink-3); line-height: 1.55; font-style: italic; }
+.video-overlay:hover .play-btn { transform: scale(1.1); background: #fff; }
+.play-btn svg { width: 26px; height: 26px; fill: var(--ink); margin-left: 3px; }
+.video-body { display: none; }
 .video-stars {
   margin-top: 8px;
   display: flex;
@@ -1113,23 +1114,55 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-top: 32px;
+  align-items: start;
 }
 .prova-print {
-  aspect-ratio: 9/16;
   background: var(--white);
-  border: 1px dashed var(--ink-4);
-  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.prova-print:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.grev-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.grev-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 8px;
-  color: var(--ink-4);
-  font-size: 12px;
-  text-align: center;
-  padding: 16px;
+  flex-shrink: 0;
 }
-.prova-print svg { width: 28px; height: 28px; opacity: 0.4; }
+.grev-info { display: flex; flex-direction: column; gap: 1px; }
+.grev-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+.grev-date { font-size: 11px; color: var(--ink-4); }
+.grev-stars { display: flex; gap: 2px; }
+.grev-stars svg { width: 13px; height: 13px; fill: #F59E0B; }
+.grev-text { font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.grev-source {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--ink-4);
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-2);
+}
+.grev-source svg { width: 14px; height: 14px; flex-shrink: 0; }
 @media(max-width:768px) {
   .prova-stats { grid-template-columns: 1fr 1fr; }
   .prova-stat { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -1571,7 +1604,7 @@ footer {
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="IMG_6458.jpg" alt="Strike Nutrition" class="nav-logo-img">
+    <img src="Criativos%20Arthur%20/IMG_6458.jpg" alt="Strike Nutrition" class="nav-logo-img">
   </a>
   <a href="#kits" class="nav-cta">Ver kits</a>
 </nav>
@@ -1733,7 +1766,7 @@ footer {
         <div class="c-track" data-current="0">
         <div class="antes-card reveal">
         <div class="antes-full-img">
-          <img src="antes-depois/PHOTO-2026-04-30-20-18-30%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-18-30%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -1743,7 +1776,7 @@ footer {
       </div>
         <div class="antes-card reveal reveal-d1">
         <div class="antes-full-img">
-          <img src="antes-depois/PHOTO-2026-04-30-20-18-59.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-18-59.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -1753,7 +1786,7 @@ footer {
       </div>
         <div class="antes-card reveal reveal-d2">
         <div class="antes-full-img">
-          <img src="antes-depois/PHOTO-2026-04-30-20-19-21%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-19-21%202.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -1783,7 +1816,7 @@ footer {
     <div class="video-grid">
       <div class="video-card reveal">
         <div class="video-thumb">
-          <video id="vid1" src="videos/IMG_2906.mov" playsinline preload="metadata"></video>
+          <video id="vid1" src="Bruna%20Seca%20Rapido%20/IMG_2906.mov" playsinline preload="metadata"></video>
           <div class="video-overlay" onclick="playVid('vid1',this)">
             <div class="play-btn">
               <svg viewBox="0 0 20 20"><path d="M7 4l10 6-10 6V4z"/></svg>
@@ -1804,7 +1837,7 @@ footer {
       </div>
       <div class="video-card reveal reveal-d2">
         <div class="video-thumb">
-          <video id="vid2" src="videos/IMG_2904.mov" playsinline preload="metadata"></video>
+          <video id="vid2" src="Bruna%20Seca%20Rapido%20/IMG_2904.mov" playsinline preload="metadata"></video>
           <div class="video-overlay" onclick="playVid('vid2',this)">
             <div class="play-btn">
               <svg viewBox="0 0 20 20"><path d="M7 4l10 6-10 6V4z"/></svg>
@@ -2047,19 +2080,43 @@ footer {
       </div>
     </div>
 
-    <!-- BLOCO 2: PRINTS DE INSTAGRAM / STORIES (placeholders) -->
+    <!-- BLOCO 2: DEPOIMENTOS GOOGLE -->
     <div class="prova-prints reveal reveal-d1">
-      <div class="prova-print">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="0.8" fill="currentColor"/></svg>
-        Print de story / comentário real
+      <div class="prova-print reveal">
+        <div class="grev-header">
+          <div class="grev-avatar" style="background:#C8281A">A</div>
+          <div class="grev-info">
+            <div class="grev-name">Ana Paula S.</div>
+            <div class="grev-date">há 3 semanas</div>
+          </div>
+        </div>
+        <div class="grev-stars"><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg></div>
+        <div class="grev-text">"Em 10 dias o inchaço sumiu. Terceira semana e as roupas já estão largas. Recomendo muito!"</div>
+        <div class="grev-source"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Avaliação no Google</div>
       </div>
-      <div class="prova-print">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="0.8" fill="currentColor"/></svg>
-        Print de story / comentário real
+      <div class="prova-print reveal">
+        <div class="grev-header">
+          <div class="grev-avatar" style="background:#1a6bc8">R</div>
+          <div class="grev-info">
+            <div class="grev-name">Rodrigo M.</div>
+            <div class="grev-date">há 1 mês</div>
+          </div>
+        </div>
+        <div class="grev-stars"><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg></div>
+        <div class="grev-text">"Emagreci 5kg em 6 semanas e a energia no treino melhorou muito. Não acreditava, mas funcionou."</div>
+        <div class="grev-source"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Avaliação no Google</div>
       </div>
-      <div class="prova-print">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="0.8" fill="currentColor"/></svg>
-        Print de story / comentário real
+      <div class="prova-print reveal">
+        <div class="grev-header">
+          <div class="grev-avatar" style="background:#16a34a">F</div>
+          <div class="grev-info">
+            <div class="grev-name">Fernanda C.</div>
+            <div class="grev-date">há 2 semanas</div>
+          </div>
+        </div>
+        <div class="grev-stars"><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg><svg viewBox="0 0 12 12"><path d="M6 1l1.5 3.5H11L8.5 6.5l1 3L6 8l-3.5 1.5 1-3L1 4.5h3.5z"/></svg></div>
+        <div class="grev-text">"Chegou rápido, atendimento ótimo. Na segunda semana já senti diferença na disposição e no inchaço."</div>
+        <div class="grev-source"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Avaliação no Google</div>
       </div>
     </div>
   </div>
@@ -2079,7 +2136,7 @@ footer {
         <div class="c-track" data-current="0">
         <div class="antes-card">
         <div class="antes-full-img">
-          <img src="antes-depois/PHOTO-2026-04-30-20-19-46.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-19-46.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -2089,7 +2146,7 @@ footer {
       </div>
         <div class="antes-card">
         <div class="antes-full-img">
-          <img src="antes-depois/PHOTO-2026-04-30-20-25-21.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-25-21.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -2099,7 +2156,7 @@ footer {
       </div>
         <div class="antes-card">
         <div class="antes-full-img">
-          <img src="antes-depois/PHOTO-2026-04-30-20-25-39.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
+          <img src="Antes%20e%20Depois%20Seca%20R%C3%A1pido%20/PHOTO-2026-04-30-20-25-39.jpg" alt="Antes e depois - Seca Rápido" loading="lazy">
           <div class="antes-watermark">Seca Rápido</div>
         </div>
         <div class="antes-info">
@@ -2385,7 +2442,7 @@ footer {
 <footer>
   <div class="footer-inner">
     <div>
-      <img src="IMG_6458.jpg" alt="Strike Nutrition" class="footer-logo-img">
+      <img src="Criativos%20Arthur%20/IMG_6458.jpg" alt="Strike Nutrition" class="footer-logo-img">
       <p class="footer-desc">Suplementos de alta performance para quem busca evolução real. Qualidade certificada, resultados comprovados.</p>
       <p class="footer-legal">
         CNPJ: 55.319.734/0024-9 &nbsp;&middot;&nbsp; Todos os direitos reservados &copy; 2026 Strike Nutrition<br>
